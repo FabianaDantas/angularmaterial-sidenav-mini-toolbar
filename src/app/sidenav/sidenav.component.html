@@ -1,0 +1,37 @@
+<app-menu></app-menu>
+
+<mat-sidenav-container class="sidenav-container" autosize>
+  <mat-sidenav #drawer [class.sidenav]="isExpanded"
+        [mode]="'side'"
+        opened="{{ isExpanded }}">
+
+
+      <div class="toggle" (click)="toggleMenu()" >
+        <mat-icon aria-label="Side nav toggle icon">
+          {{ isExpanded ? "keyboard_backspace" : "menu" }}
+        </mat-icon>
+      </div>
+
+      <mat-divider></mat-divider>
+      <mat-nav-list *ngFor="let route of routes">
+        <mat-list-item routerLink="{{ route.link }}" routerLinkActive="router-link-active" >
+          <mat-icon mat-list-icon>{{ route.icon }}</mat-icon>
+          <span class="full-width" *ngIf="isExpanded"> {{ route.name }}</span>
+        </mat-list-item>
+      </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content class="" [style.margin-left.px]="!isExpanded ? 60 : 250">
+     <!-- <mat-toolbar color="primary">
+          <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" >
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+          <span>Painel Administrativo</span>
+      </mat-toolbar>
+      -->
+    <div style="height: 88vh;">
+
+      <ng-content></ng-content>
+
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,35 @@
+<nav>
+  <mat-toolbar color="primary">
+    <div class="left">
+      <button type="button" class="button-left" aria-label="Toggle sidenav" mat-icon-button [routerLink]="'/'">
+        <mat-icon aria-label="Side nav toggle icon">chevron_left</mat-icon>
+      </button>
+    </div>
+
+    <div class="brand-logo spacer">
+      <span>Menu & Sidenav Mini</span>
+    </div>
+
+    <span class="spacer"></span>
+
+    <a mat-button [matMenuTriggerFor]="menu">
+      Hi User
+      <mat-icon>arrow_drop_down</mat-icon>
+    </a>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <a mat-menu-item>
+        <mat-icon>people_outline</mat-icon>
+        <span>etc</span>
+      </a>
+      <a mat-menu-item>
+        <mat-icon>videocam</mat-icon>
+        <span>etc</span>
+      </a>
+      <a mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </a>
+    </mat-menu>
+  </mat-toolbar>
+
+</nav>

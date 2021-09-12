@@ -1,0 +1,32 @@
+.menuPage {
+    min-width: 200px;
+    line-height: 62px !important;
+    background:rgba(0,0,0,0.1);
+    font-size: 16px;
+
+    .dropdownIcon {
+        padding-left: 15px;
+    }
+}
+.button-left {
+    margin-right: 10px !important;
+}
+::ng-deep .menuPageItem {
+    min-width: 200px !important;
+
+}
+
+
+@media(max-width: 750px) {
+    .menuPage {
+        min-width: 64px;
+
+        .dropdownIcon {
+            padding-left: 0;
+        }
+    }
+}
+
+.spacer {
+    flex: 1 1 auto;
+  }
